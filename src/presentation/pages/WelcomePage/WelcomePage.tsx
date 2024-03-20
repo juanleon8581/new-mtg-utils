@@ -1,7 +1,7 @@
 export const WelcomePage = () => {
   return (
     <div>
-      <p>WelcomePage</p>
+      <p>Welcome to MTG-Utils</p>
     </div>
   );
 };
