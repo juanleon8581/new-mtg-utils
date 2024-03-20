@@ -11,6 +11,7 @@
     "test": "vitest --ui"
   },
   "dependencies": {
+    "@fontsource/roboto": "^5.0.12",
     "@popperjs/core": "^2.11.8",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
