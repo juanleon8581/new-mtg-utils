@@ -1,11 +1,21 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
 }
 
-html,
 #root {
-  background-color: rgb(27, 27, 29);
   color: #fff;
-  font-family: "Roboto";
+  background-color: rgb(27, 27, 29);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pageContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -8,6 +8,8 @@ import {
 import type { TimerInput } from "../../../interfaces";
 import { TimerFormItem } from "../../component";
 
+import "./TimerPage.css";
+
 export const TimerPage = () => {
   const {
     register,
@@ -18,35 +20,44 @@ export const TimerPage = () => {
   const onSubmit: SubmitHandler<TimerInput> = (data) => console.log(data);
 
   return (
-    <Container>
-      <Row>
-        <h1>Count Down</h1>
-      </Row>
-      <Row>
-        <Col md="6">
-          <Form role="form" onSubmit={handleSubmit(onSubmit)}>
-            {timerFormItemsData.map((item) => {
-              return (
-                <TimerFormItem
-                  key={item.name}
-                  labelText={item.labelText}
-                  name={item.name}
-                  fieldValidations={item.fieldValidations}
-                  register={register}
-                  errors={errors}
-                />
-              );
-            })}
+    <div className="pageContainer">
+      <h1>Count Down</h1>
+      <Container>
+        <Row className="formContainer">
+          <Col md="6">
+            <Form
+              role="form"
+              onSubmit={handleSubmit(onSubmit)}
+              className="timerForm"
+            >
+              {timerFormItemsData.map((item) => {
+                return (
+                  <TimerFormItem
+                    key={item.name}
+                    labelText={item.labelText}
+                    name={item.name}
+                    fieldValidations={item.fieldValidations}
+                    register={register}
+                    errors={errors}
+                  />
+                );
+              })}
 
-            <Button variant="primary" type="submit">
-              Start
-            </Button>
-          </Form>
-        </Col>
-      </Row>
-      <Row>
-        <Col>Timer</Col>
-      </Row>
-    </Container>
+              <Button
+                variant="outline-light"
+                size="lg"
+                type="submit"
+                className="btnSubmit"
+              >
+                Start
+              </Button>
+            </Form>
+          </Col>
+        </Row>
+        <Row>
+          <Col>Timer</Col>
+        </Row>
+      </Container>
+    </div>
   );
 };

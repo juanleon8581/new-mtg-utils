@@ -2,7 +2,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 
 export const Header = () => {
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar fixed="top" bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="#">MTG Utils</Navbar.Brand>
         <Nav className="me-auto">
