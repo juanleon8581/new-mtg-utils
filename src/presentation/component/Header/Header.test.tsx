@@ -7,7 +7,7 @@ describe("Header", () => {
   });
 
   test("Check header AppName", () => {
-    const appName = screen.getByText("MTG Utils");
+    const appName = screen.getByText("MTG - Utils");
     expect(appName).toBeDefined();
   });
 
