@@ -33,3 +33,22 @@ export const timerFormItemsData: TimerFormItemProps[] = [
     fieldValidations: fieldValidations.seconds,
   },
 ];
+
+export const toMilliseconds = (hrs: string, min: string, sec: string) => {
+  const nhrs: number = parseInt(hrs);
+  const nmin: number = parseInt(min);
+  const nsec: number = parseInt(sec);
+  return (nhrs * 60 * 60 + nmin * 60 + nsec) * 1000;
+};
+
+export const formatDateFromMilliseconds = (milliseconds = 0): string => {
+  const format = (value: number) => {
+    return value > 9 ? `${value}` : `0${value}`;
+  };
+  const dateByMilliseconds = new Date(milliseconds);
+  const getSeconds: string = format(dateByMilliseconds.getSeconds());
+  const getMinutes: string = format(dateByMilliseconds.getMinutes());
+  const getHour: string = format(milliseconds / 3600000);
+
+  return `${getHour}:${getMinutes}:${getSeconds}`;
+};
