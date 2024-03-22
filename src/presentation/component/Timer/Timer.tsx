@@ -10,16 +10,9 @@ const Timer = ({
   setTimerData,
   formatDateFromMilliseconds,
 }: TimerComponentProps) => {
-  const [timeLeft, { start, pause, resume, reset }] = useCountDown({});
-
-  useEffect(() => {
-    if (!timerData.isRun) {
-      setTimerData({ ...timerData, isRun: true });
-    }
-    if (timeLeft <= 0 && timerData.isRun) {
-      onCompleteTimerHandler();
-    }
-  }, [timeLeft, timerData, setTimerData]);
+  const [timeLeft, { start, pause, resume, reset }] = useCountDown({
+    onFinish: onCompleteTimerHandler,
+  });
 
   const restart = useCallback(() => {
     start(timerData.value);

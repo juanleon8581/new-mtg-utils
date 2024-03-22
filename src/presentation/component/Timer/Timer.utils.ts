@@ -22,14 +22,9 @@ export const onCompleteTimerHandler = () => {
     "https://freesound.org/data/previews/316/316847_4939433-lq.mp3"
   );
 
+  sound.play();
   const sounInterval = setInterval(() => {
-    if (guard === 2) {
-      clearInterval(sounInterval);
-      return;
-    }
-    guard += 1;
-    //TODO
-    // sound.play();
-    console.log(sound);
+    sound.play();
+    guard === 2 ? clearInterval(sounInterval) : (guard += 1);
   }, 5000);
 };

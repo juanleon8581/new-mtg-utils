@@ -9,6 +9,7 @@ interface Timer {
 }
 
 interface CountDownProps {
+  onFinish: () => void;
   timeToCount?: number;
   interval?: number;
 }
@@ -30,6 +31,7 @@ const initialValues: Timer = {
 export const useCountDown = ({
   timeToCount = 60000,
   interval = 1000,
+  onFinish,
 }: CountDownProps): [number, Actions] => {
   const [timeLeft, setTimeLeft] = useState(0);
   const timer = useRef<Timer>(initialValues);
@@ -57,11 +59,12 @@ export const useCountDown = ({
       if (ts - timer.current.started < timer.current.timeToCount) {
         timer.current.requestId = window.requestAnimationFrame(run);
       } else {
+        onFinish();
         timer.current = initialValues;
         setTimeLeft(0);
       }
     },
-    [interval]
+    [interval, onFinish]
   );
 
   const start = useCallback(

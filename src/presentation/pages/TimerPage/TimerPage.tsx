@@ -22,14 +22,12 @@ export const TimerPage = () => {
   } = useForm<TimerInput>({ defaultValues: defaultInitialTimerFormValues });
   const [timerData, setTimerData] = useState<TimerData>({
     isSet: false,
-    isRun: false,
     value: 0,
   });
 
   const onSubmit: SubmitHandler<TimerInput> = ({ hours, minutes, seconds }) => {
     setTimerData({
       isSet: true,
-      isRun: false,
       value: toMilliseconds(hours, minutes, seconds),
     });
   };
