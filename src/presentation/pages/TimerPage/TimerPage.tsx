@@ -2,13 +2,17 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   defaultInitialTimerFormValues,
+  formatDateFromMilliseconds,
   timerFormItemsData,
+  toMilliseconds,
 } from "./TimerPage.controller";
 
-import type { TimerInput } from "../../../interfaces";
+import type { TimerData, TimerInput } from "../../../interfaces";
 import { TimerFormItem } from "../../component";
 
 import "./TimerPage.css";
+import { useState } from "react";
+import Timer from "../../component/Timer/Timer";
 
 export const TimerPage = () => {
   const {
@@ -16,47 +20,67 @@ export const TimerPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<TimerInput>({ defaultValues: defaultInitialTimerFormValues });
+  const [timerData, setTimerData] = useState<TimerData>({
+    isSet: false,
+    isRun: false,
+    value: 0,
+  });
 
-  const onSubmit: SubmitHandler<TimerInput> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<TimerInput> = ({ hours, minutes, seconds }) => {
+    setTimerData({
+      isSet: true,
+      isRun: false,
+      value: toMilliseconds(hours, minutes, seconds),
+    });
+  };
 
   return (
     <div className="pageContainer">
       <h1>Count Down</h1>
       <Container>
-        <Row className="formContainer">
-          <Col md="6">
-            <Form
-              role="form"
-              onSubmit={handleSubmit(onSubmit)}
-              className="timerForm"
-            >
-              {timerFormItemsData.map((item) => {
-                return (
-                  <TimerFormItem
-                    key={item.name}
-                    labelText={item.labelText}
-                    name={item.name}
-                    fieldValidations={item.fieldValidations}
-                    register={register}
-                    errors={errors}
-                  />
-                );
-              })}
-
-              <Button
-                variant="outline-light"
-                size="lg"
-                type="submit"
-                className="btnSubmit"
+        {timerData.isSet ? (
+          <Row className="timerContainer">
+            <Col md="8" lg="6">
+              <Timer
+                timerData={timerData}
+                setTimerData={setTimerData}
+                formatDateFromMilliseconds={formatDateFromMilliseconds}
+              />
+            </Col>
+          </Row>
+        ) : (
+          <Row className="formContainer">
+            <Col md="6">
+              <Form
+                role="form"
+                onSubmit={handleSubmit(onSubmit)}
+                className="timerForm"
               >
-                Start
-              </Button>
-            </Form>
-          </Col>
-        </Row>
-        <Row>
-          <Col>Timer</Col>
-        </Row>
+                {timerFormItemsData.map((item) => {
+                  return (
+                    <TimerFormItem
+                      key={item.name}
+                      labelText={item.labelText}
+                      name={item.name}
+                      fieldValidations={item.fieldValidations}
+                      register={register}
+                      errors={errors}
+                    />
+                  );
+                })}
+
+                <Button
+                  variant="outline-light"
+                  size="lg"
+                  type="submit"
+                  className="btnSubmit"
+                >
+                  Start
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+        )}
       </Container>
     </div>
   );

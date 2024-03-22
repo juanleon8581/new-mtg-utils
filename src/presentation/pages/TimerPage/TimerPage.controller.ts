@@ -5,9 +5,9 @@ import type {
 } from "../../../interfaces";
 
 export const defaultInitialTimerFormValues: TimerInput = {
-  hours: 1,
-  minutes: 15,
-  seconds: 0,
+  hours: "0",
+  minutes: "0",
+  seconds: "15",
 };
 
 export const fieldValidations: TimerInputsOptions = {
@@ -38,11 +38,15 @@ export const toMilliseconds = (hrs: string, min: string, sec: string) => {
   const nhrs: number = parseInt(hrs);
   const nmin: number = parseInt(min);
   const nsec: number = parseInt(sec);
-  return (nhrs * 60 * 60 + nmin * 60 + nsec) * 1000;
+  const calSeg = nhrs * 60 * 60 + nmin * 60 + nsec;
+  const calMilSeg = calSeg * 1000;
+
+  return calMilSeg;
 };
 
 export const formatDateFromMilliseconds = (milliseconds = 0): string => {
   const format = (value: number) => {
+    value = parseInt(`${value}`);
     return value > 9 ? `${value}` : `0${value}`;
   };
   const dateByMilliseconds = new Date(milliseconds);

@@ -1,0 +1,17 @@
+.timerDisplayContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.displayCountDown {
+  text-align: center;
+  font-size: 10vh;
+  width: 100%;
+}
+
+.btnsCoutDown {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
