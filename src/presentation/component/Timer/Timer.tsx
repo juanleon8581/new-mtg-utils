@@ -5,7 +5,7 @@ import type { TimerComponentProps } from "../../../interfaces";
 import { useCountDown } from "../../../hooks/useCountDown";
 import "./Timer.css";
 
-const Timer = ({
+export const Timer = ({
   timerData,
   setTimerData,
   formatDateFromMilliseconds,
@@ -55,5 +55,3 @@ const Timer = ({
     </>
   );
 };
-
-export default Timer;

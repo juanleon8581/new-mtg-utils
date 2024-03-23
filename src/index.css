@@ -5,15 +5,21 @@
   font-family: arcadeclassic, Arial, Helvetica, sans-serif;
 }
 
+html > body {
+  background-color: rgb(27, 27, 29);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 #root {
   color: #fff;
-  background-color: rgb(27, 27, 29);
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
 }
 
 .pageContainer {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -21,6 +21,5 @@
 .timerContainer > div,
 .formContainer > div {
   padding: 5vh 5vw;
-  /* border: solid 1px #fff; */
   border-radius: 1rem;
 }

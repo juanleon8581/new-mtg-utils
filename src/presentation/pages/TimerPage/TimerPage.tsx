@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm, SubmitHandler } from "react-hook-form";
+
+import { Timer, TimerFormItem } from "../../component";
 import {
   defaultInitialTimerFormValues,
   formatDateFromMilliseconds,
@@ -8,11 +11,7 @@ import {
 } from "./TimerPage.controller";
 
 import type { TimerData, TimerInput } from "../../../interfaces";
-import { TimerFormItem } from "../../component";
-
 import "./TimerPage.css";
-import { useState } from "react";
-import Timer from "../../component/Timer/Timer";
 
 export const TimerPage = () => {
   const {
