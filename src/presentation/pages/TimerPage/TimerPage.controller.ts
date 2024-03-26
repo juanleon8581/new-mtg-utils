@@ -5,9 +5,9 @@ import type {
 } from "../../../interfaces";
 
 export const defaultInitialTimerFormValues: TimerInput = {
-  hours: "0",
-  minutes: "0",
-  seconds: "15",
+  hours: "1",
+  minutes: "15",
+  seconds: "06",
 };
 
 export const fieldValidations: TimerInputsOptions = {

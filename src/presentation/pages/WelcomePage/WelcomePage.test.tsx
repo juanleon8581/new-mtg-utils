@@ -1,11 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import { WelcomePage } from "..";
 import { expect } from "vitest";
+import { createMemoryRouter, RouterProvider } from "react-router-dom";
 
 describe("WelcomePage", () => {
   test("Validate - simply welcompage", () => {
-    render(<WelcomePage />);
-    const text = screen.getByText("Welcome to MTG-Utils");
+    const router = createMemoryRouter(
+      [{ path: "/", element: <WelcomePage /> }],
+      {
+        initialEntries: ["/"],
+      }
+    );
+    render(<RouterProvider router={router} />);
+    const text = screen.getByText("4º Liga Spelltable");
     expect(text).toBeDefined();
   });
 });

@@ -1,9 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { Header } from "./Header";
+import { createMemoryRouter, RouterProvider } from "react-router-dom";
 
 describe("Header", () => {
   beforeEach(() => {
-    render(<Header />);
+    const router = createMemoryRouter([{ path: "/", element: <Header /> }], {
+      initialEntries: ["/"],
+    });
+    render(<RouterProvider router={router} />);
   });
 
   test("Check header AppName", () => {
