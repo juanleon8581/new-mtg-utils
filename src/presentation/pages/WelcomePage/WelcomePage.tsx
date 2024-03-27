@@ -16,6 +16,8 @@ export const WelcomePage = () => {
               xs={12}
               sm={6}
               lg={4}
+              xl={3}
+              xxl={2}
             >
               <EventCard {...e} />
             </Col>
