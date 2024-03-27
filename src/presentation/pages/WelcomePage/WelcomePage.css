@@ -1,3 +1,16 @@
 .welcomePageContainer {
   margin-top: 10vh;
 }
+
+.eventRow {
+  justify-content: space-around;
+}
+
+.cardCol {
+  display: flex;
+  justify-content: center;
+}
+
+.row > .cardCol {
+  margin-top: 1rem;
+}

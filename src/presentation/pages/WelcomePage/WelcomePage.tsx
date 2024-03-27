@@ -1,24 +1,26 @@
 import { Col, Container, Row } from "react-bootstrap";
-import "./WelcomePage.css";
 import { EventCard } from "../../component/EventCard/EventCard";
-import MOLiga from "../../../assets/img/testMo1.jpeg";
+import { eventsStack } from "./WelcomePageEventsData";
 
-const exampleText = `Some quick example text to build on the card title and make up
-the bulk of the card's content.`;
+import "./WelcomePage.css";
 
 export const WelcomePage = () => {
   return (
-    <Container className="welcomePageContainer">
-      <Row>
-        <Col xs={12} sm={6}>
-          <EventCard
-            imgSrc={MOLiga}
-            title="4º Liga Spelltable"
-            btnLabel="Ir al evento"
-            to="/timer"
-            description={exampleText}
-          />
-        </Col>
+    <Container fluid className="welcomePageContainer">
+      <Row className="eventRow">
+        {eventsStack.map((e) => {
+          return (
+            <Col
+              className="cardCol"
+              key={`${e.title}${e.description.location}`}
+              xs={12}
+              sm={6}
+              lg={4}
+            >
+              <EventCard {...e} />
+            </Col>
+          );
+        })}
       </Row>
     </Container>
   );
