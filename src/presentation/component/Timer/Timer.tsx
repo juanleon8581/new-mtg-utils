@@ -26,7 +26,7 @@ export const Timer = ({
     <>
       <Container className="timerDisplayContainer">
         <Row>
-          <Col as={"span"} className="displayCountDown">
+          <Col as={"span"} className="displayCountDown" role="displayCountDown">
             {formatDateFromMilliseconds(timeLeft)}
           </Col>
         </Row>
