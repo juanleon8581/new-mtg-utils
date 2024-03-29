@@ -1,5 +1,37 @@
 import { FieldValues, useForm } from "react-hook-form";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
+
+import { FormItem } from "../../component";
+import { FormInput } from "../../../interfaces";
+
+const nameValidations = {
+  required: {
+    value: true,
+    message: "Please enter your name",
+  },
+  maxLength: {
+    value: 30,
+    message: "Please use 30 characters or less",
+  },
+};
+
+const emailValidations = {
+  required: true,
+  pattern:
+    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+};
+
+const subjectValitations = {
+  required: {
+    value: true,
+    message: "Please enter a subject",
+  },
+  maxLength: {
+    value: 75,
+    message: "Subject cannot exceed 75 characters",
+  },
+};
 
 export const ContactUs = () => {
   const {
@@ -7,7 +39,7 @@ export const ContactUs = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormInput>();
 
   const onSubmit = async (data: FieldValues) => {
     const { name, email, subject, message } = data;
@@ -31,109 +63,71 @@ export const ContactUs = () => {
   };
 
   return (
-    <div className="ContactForm normalPageContainer">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 text-center">
-            <div className="contactForm">
-              <form
-                id="contact-form"
-                onSubmit={handleSubmit(onSubmit)}
-                noValidate
+    <>
+      <Container className="normalPageContainer">
+        <Form role="contact-form" onSubmit={handleSubmit(onSubmit)}>
+          <Row>
+            <Col xs={12} sm={6}>
+              <FormItem
+                labelText="Name"
+                name="name"
+                type="text"
+                fieldValidations={nameValidations}
+                errors={errors}
+                register={register}
+              />
+            </Col>
+            <Col xs={12} sm={6}>
+              <FormItem
+                labelText="Email"
+                name="email"
+                type="text"
+                fieldValidations={emailValidations}
+                errors={errors}
+                register={register}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <FormItem
+                labelText="Subject"
+                name="subject"
+                type="text"
+                fieldValidations={subjectValitations}
+                errors={errors}
+                register={register}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <FormItem
+                labelText="Message"
+                name="message"
+                type="textarea"
+                fieldValidations={{
+                  required: true,
+                }}
+                errors={errors}
+                register={register}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Button
+                variant="outline-light"
+                size="lg"
+                type="submit"
+                className="btnSubmit"
               >
-                {/* Row 1 of form */}
-                <div className="row formRow">
-                  <div className="col-6">
-                    <input
-                      type="text"
-                      {...register("name", {
-                        required: {
-                          value: true,
-                          message: "Please enter your name",
-                        },
-                        maxLength: {
-                          value: 30,
-                          message: "Please use 30 characters or less",
-                        },
-                      })}
-                      className="form-control formInput"
-                      placeholder="Name"
-                    ></input>
-                    {errors.name && (
-                      <span className="errorMessage">
-                        {errors.name.message?.toString()}
-                      </span>
-                    )}
-                  </div>
-                  <div className="col-6">
-                    <input
-                      type="email"
-                      {...register("email", {
-                        required: true,
-                        pattern:
-                          /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                      })}
-                      className="form-control formInput"
-                      placeholder="Email address"
-                    ></input>
-                    {errors.email && (
-                      <span className="errorMessage">
-                        Please enter a valid email address
-                      </span>
-                    )}
-                  </div>
-                </div>
-                {/* Row 2 of form */}
-                <div className="row formRow">
-                  <div className="col">
-                    <input
-                      type="text"
-                      {...register("subject", {
-                        required: {
-                          value: true,
-                          message: "Please enter a subject",
-                        },
-                        maxLength: {
-                          value: 75,
-                          message: "Subject cannot exceed 75 characters",
-                        },
-                      })}
-                      className="form-control formInput"
-                      placeholder="Subject"
-                    ></input>
-                    {errors.subject && (
-                      <span className="errorMessage">
-                        {errors.subject.message?.toString()}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                {/* Row 3 of form */}
-                <div className="row formRow">
-                  <div className="col">
-                    <textarea
-                      rows={3}
-                      {...register("message", {
-                        required: true,
-                      })}
-                      className="form-control formInput"
-                      placeholder="Message"
-                    ></textarea>
-                    {errors.message && (
-                      <span className="errorMessage">
-                        Please enter a message
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <button className="submit-btn" type="submit">
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                Enviar
+              </Button>
+            </Col>
+          </Row>
+        </Form>
+      </Container>
+    </>
   );
 };
