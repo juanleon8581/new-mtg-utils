@@ -14,11 +14,21 @@ export const FormItem = ({
   return (
     <Form.Group className="mb-3">
       <Form.Label>{labelText}</Form.Label>
-      <Form.Control
-        type={type}
-        role={`${name}Input`}
-        {...register(name, fieldValidations)}
-      />
+      {type === "textarea" ? (
+        <Form.Control
+          as={type}
+          rows={3}
+          role={`${name}Input`}
+          {...register(name, fieldValidations)}
+        />
+      ) : (
+        <Form.Control
+          type={type}
+          role={`${name}Input`}
+          {...register(name, fieldValidations)}
+        />
+      )}
+
       {errors[name] && (
         <Form.Text role="errorField" style={{ color: "#fff" }}>
           {errors[name]?.type}

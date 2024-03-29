@@ -10,7 +10,7 @@ import {
   toMilliseconds,
 } from "./TimerPage.controller";
 
-import type { TimerData, TimerInput } from "../../../interfaces";
+import type { TimerData, FormInput } from "../../../interfaces";
 import "./TimerPage.css";
 
 export const TimerPage = () => {
@@ -18,13 +18,13 @@ export const TimerPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<TimerInput>({ defaultValues: defaultInitialTimerFormValues });
+  } = useForm<FormInput>({ defaultValues: defaultInitialTimerFormValues });
   const [timerData, setTimerData] = useState<TimerData>({
     isSet: false,
     value: 0,
   });
 
-  const onSubmit: SubmitHandler<TimerInput> = ({ hours, minutes, seconds }) => {
+  const onSubmit: SubmitHandler<FormInput> = ({ hours, minutes, seconds }) => {
     setTimerData({
       isSet: true,
       value: toMilliseconds(hours, minutes, seconds),
