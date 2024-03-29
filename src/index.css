@@ -30,3 +30,7 @@ body::-webkit-scrollbar {
   font-family: arcadeclassic;
   src: url(./assets/fonts/arcadeclassic.TTF);
 }
+
+.normalPageContainer {
+  margin-top: 10vh;
+}

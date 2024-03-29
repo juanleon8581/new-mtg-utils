@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./generic/ErrorPage/ErrorPage";
 import { routerStrings } from "./generic/globalStrings";
 import { Root } from "./Root";
-import { TimerPage, WelcomePage } from "./presentation/pages";
+import { ContactUs, TimerPage, WelcomePage } from "./presentation/pages";
 
 const routes = createBrowserRouter([
   {
@@ -18,6 +18,10 @@ const routes = createBrowserRouter([
       {
         path: `${routerStrings.timer}`,
         element: <TimerPage />,
+      },
+      {
+        path: `${routerStrings.contact}`,
+        element: <ContactUs />,
       },
     ],
   },
