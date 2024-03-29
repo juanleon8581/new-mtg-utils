@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-import { Timer, TimerFormItem } from "../../component";
+import { Timer, FormItem } from "../../component";
 import {
   defaultInitialTimerFormValues,
   formatDateFromMilliseconds,
@@ -55,7 +55,7 @@ export const TimerPage = () => {
               >
                 {timerFormItemsData.map((item) => {
                   return (
-                    <TimerFormItem
+                    <FormItem
                       key={item.name}
                       labelText={item.labelText}
                       name={item.name}

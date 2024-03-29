@@ -1,20 +1,21 @@
 import { Form } from "react-bootstrap";
-import type { TimerFormItemProps } from "../../../interfaces";
+import type { FormItemProps } from "../../../interfaces";
 
-export const TimerFormItem = ({
+export const FormItem = ({
   labelText,
+  type = "text",
   name,
   fieldValidations,
   register,
   errors,
-}: TimerFormItemProps) => {
+}: FormItemProps) => {
   if (!register || !errors) return;
 
   return (
     <Form.Group className="mb-3">
       <Form.Label>{labelText}</Form.Label>
       <Form.Control
-        type="text"
+        type={type}
         role={`${name}Input`}
         {...register(name, fieldValidations)}
       />
