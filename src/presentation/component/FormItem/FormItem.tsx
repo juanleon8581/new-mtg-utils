@@ -1,6 +1,8 @@
 import { Form } from "react-bootstrap";
 import type { FormItemProps } from "../../../interfaces";
 
+import "./FormItem.css";
+
 export const FormItem = ({
   labelText,
   type = "text",
@@ -12,13 +14,14 @@ export const FormItem = ({
   if (!register || !errors) return;
 
   return (
-    <Form.Group className="mb-3">
+    <Form.Group className="mb-3 formGroup">
       <Form.Label>{labelText}</Form.Label>
       {type === "textarea" ? (
         <Form.Control
           as={type}
           rows={3}
           role={`${name}Input`}
+          className="customForm-control"
           {...register(name, fieldValidations)}
         />
       ) : (

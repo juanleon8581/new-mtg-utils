@@ -64,7 +64,7 @@ export const ContactUs = () => {
 
   return (
     <>
-      <Container className="normalPageContainer">
+      <Container className="centerPageContainer">
         <Form role="contact-form" onSubmit={handleSubmit(onSubmit)}>
           <Row>
             <Col xs={12} sm={6}>

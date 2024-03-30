@@ -32,7 +32,7 @@ export const TimerPage = () => {
   };
 
   return (
-    <div className="pageContainer">
+    <div className="centerPageContainer">
       <h1>Count Down</h1>
       <Container>
         {timerData.isSet ? (
