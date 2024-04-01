@@ -20,8 +20,8 @@ describe("Header", () => {
     expect(home).toBeDefined();
   });
 
-  test("Check header HandCounter Nav", () => {
-    const handCounter = screen.getByText("Hand Counter");
+  test("Check header Contact Form Nav", () => {
+    const handCounter = screen.getByText("Contact");
     expect(handCounter).toBeDefined();
   });
 
