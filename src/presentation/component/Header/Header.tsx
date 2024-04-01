@@ -19,10 +19,11 @@ export const Header = () => {
           <Nav.Link as={Link} to={routerStrings.root}>
             Home
           </Nav.Link>
-          <Nav.Link href="#HandCounter">Hand Counter</Nav.Link>
-
           <Nav.Link as={Link} to={routerStrings.timer}>
             Timer
+          </Nav.Link>
+          <Nav.Link as={Link} to={routerStrings.contact}>
+            Contact
           </Nav.Link>
         </Nav>
       </Container>
