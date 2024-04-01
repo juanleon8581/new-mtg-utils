@@ -17,7 +17,9 @@ export const EventCard = ({
         <Card.Title>{title}</Card.Title>
         <ListGroup className="list-group-flush">
           <ListGroup.Item>{description.location}</ListGroup.Item>
-          <ListGroup.Item>{description.date}</ListGroup.Item>
+          <ListGroup.Item>
+            {new Date(description.date).toLocaleDateString("en-GB")}
+          </ListGroup.Item>
         </ListGroup>
         <Card.Text>{description.text}</Card.Text>
         <Button variant="outline-light">

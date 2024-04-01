@@ -5,19 +5,19 @@ import bGComarca from "../../../assets/img/bGComarca27m.jpeg";
 import type { EventCardData, EventDescription } from "../../../interfaces";
 
 const mOLigaDesc: EventDescription = {
-  date: "06/04/2024",
+  date: "04/04/2024",
   location: "Virtual - Spelltable",
   text: "Inicia en el formato competitivo sin moverte de tu hogar, liga de commander competitivo a nivel nacional.",
 };
 
 const cedhDracoDesc: EventDescription = {
-  date: "06/04/2024",
+  date: "04/06/2024",
   location: "Draco Bogota",
   text: "Participa por grandes premios y mide tu nivel como jugador competitivo enfrentando a los mejores.",
 };
 
 const bGComarcaDesc: EventDescription = {
-  date: "27/04/2024",
+  date: "04/27/2024",
   location: "La Comarca Medellin",
   text: "Desde las 4pm tendremos toda nuestra coleccion de juegos de mesa listos para que disfrutemos de ellos.",
 };
