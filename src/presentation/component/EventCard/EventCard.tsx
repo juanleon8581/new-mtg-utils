@@ -21,7 +21,7 @@ export const EventCard = ({
         </ListGroup>
         <Card.Text>{description.text}</Card.Text>
         <Button variant="primary">
-          <Link style={{ textDecoration: "none", color: "#fff" }} to={to}>
+          <Link className="linkButton" to={to}>
             {btnLabel}
           </Link>
         </Button>

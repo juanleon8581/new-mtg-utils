@@ -14,7 +14,9 @@ input[data-autocompleted] {
 }
 
 html > body {
-  background-color: rgb(27, 27, 29);
+  --general-bg-color: rgb(27, 27, 29);
+  --general-font-color: #fff;
+  background-color: var(--general-bg-color);
 }
 
 body::-webkit-scrollbar {
@@ -22,7 +24,7 @@ body::-webkit-scrollbar {
 }
 
 #root {
-  color: #fff;
+  color: var(--general-font-color);
   height: 100%;
 }
 
