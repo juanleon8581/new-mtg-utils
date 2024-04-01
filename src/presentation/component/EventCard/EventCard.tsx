@@ -20,7 +20,7 @@ export const EventCard = ({
           <ListGroup.Item>{description.date}</ListGroup.Item>
         </ListGroup>
         <Card.Text>{description.text}</Card.Text>
-        <Button variant="primary">
+        <Button variant="outline-light">
           <Link className="linkButton" to={to}>
             {btnLabel}
           </Link>

@@ -1,5 +1,7 @@
-.eventCard {
+.eventCard.card {
   max-width: 18rem;
+  background-color: var(--general-bg-color);
+  border-color: var(--general-font-color);
 }
 
 .card-body .list-group-item,
@@ -16,6 +18,7 @@
 .card-body {
   --bs-card-title-color: var(--general-font-color);
   background-color: var(--general-bg-color);
+  border-radius: var(--bs-border-radius);
 }
 
 .eventCard > .card-body > button > a {
@@ -24,7 +27,7 @@
 
 .linkButton {
   text-decoration: none;
-  color: var(--general-font-color);
+  color: inherit;
   background-color: inherit;
   letter-spacing: 1px;
   font-family: arcadeclassic;
