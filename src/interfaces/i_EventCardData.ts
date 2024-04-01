@@ -6,4 +6,5 @@ export interface EventCardData {
   btnLabel: string;
   to: string;
   description: EventDescription;
+  type?: string;
 }

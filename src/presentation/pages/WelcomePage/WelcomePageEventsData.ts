@@ -28,6 +28,7 @@ const mOLigaEventData: EventCardData = {
   btnLabel: "Saber mas...",
   to: "/timer",
   description: mOLigaDesc,
+  type: "primary",
 };
 
 const cedhDracoEventData: EventCardData = {
