@@ -4,8 +4,9 @@ import { eventsObj } from "../WelcomePage/WelcomePageEventsData";
 import { Button, ButtonGroup, Col, Container, Row } from "react-bootstrap";
 import type { EventsObj } from "../../../interfaces";
 
-import "./EventDetail.css";
 import { BuyMeACoffe } from "../../../generic/BuyMeACoffe/BuyMeACoffe";
+import "./EventDetail.css";
+import "./EventDetail.mq.css";
 
 const socialMediaGetIcons = (name: string) => {
   switch (name) {
@@ -29,7 +30,7 @@ export const EventDetail = () => {
   const socialMediaInfo = eventData.description.socialMedia;
   return (
     <>
-      <Container className="normalPageContainer">
+      <Container fluid className="normalPageContainer">
         <Row className="upperContainer">
           <Col xs={12} sm={6}>
             <h1>
@@ -62,7 +63,12 @@ export const EventDetail = () => {
             <Container className="otherInfoContainer">
               <Row>
                 <Col xs={12}>
-                  <h5>{eventData.description.owner} social media</h5>
+                  <img
+                    className="ownerImg"
+                    src={eventData.description.ownerimg || eventData.imgSrc}
+                    alt={eventData.description.owner}
+                  />
+                  <h5>social media</h5>
                 </Col>
               </Row>
               <Row>

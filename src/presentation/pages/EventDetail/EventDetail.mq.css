@@ -1,0 +1,52 @@
+@media (max-width: 576px) {
+  .descriptionContainer {
+    font-size: 1.1rem;
+  }
+
+  .largeDesc {
+    border-bottom: 1px dashed rgb(255, 255, 255, 0.2);
+  }
+
+  .normalPageContainer {
+    max-width: 95vw;
+  }
+
+  .ownerInfoContainer > .row {
+    justify-content: start;
+  }
+}
+
+@media (min-width: 576px) {
+  .upperContainer.row > div > h1 {
+    margin-right: -10rem;
+  }
+
+  .largeDesc {
+    border-right: 1px dashed rgb(255, 255, 255, 0.2);
+  }
+}
+
+/* mediaquery beetwen sm and lg */
+@media (min-width: 576px) and (max-width: 992px) {
+  .btn-group > button {
+    font-size: inherit;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Your CSS code Extra large screens goes here */
+  .normalPageContainer {
+    max-width: 70vw;
+  }
+
+  .upperContainer h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Your CSS code large screens goes here */
+  .normalPageContainer {
+    max-width: 90vw;
+  }
+}

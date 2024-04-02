@@ -3,12 +3,6 @@
   padding-top: 1rem;
 }
 
-@media (min-width: 576px) {
-  .upperContainer.row > div > h1 {
-    margin-right: -10rem;
-  }
-}
-
 .upperContainer.row > div > h1 {
   text-align: right;
   position: relative;
@@ -20,9 +14,8 @@
   background-color: var(--general-bg-color);
 }
 
-.largeDesc {
-  border-right: 1px dashed rgb(255, 255, 255, 0.2);
-  border-bottom: 1px dashed rgb(255, 255, 255, 0.2);
+.upperContainer h1 {
+  font-size: 2.5rem;
 }
 
 .descriptionContainer {
@@ -58,5 +51,27 @@
 }
 
 .btn-group > button {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.ownerInfoContainer.container {
+  margin: 1rem;
+}
+
+.ownerInfoContainer > .row {
+  justify-content: end;
+  align-items: center;
+}
+
+.ownerImg {
+  max-width: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.socialMediaContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 }
