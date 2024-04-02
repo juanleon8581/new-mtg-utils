@@ -1,15 +1,32 @@
 import { useParams } from "react-router-dom";
+import { Whatsapp, Instagram, Facebook, Discord } from "react-bootstrap-icons";
 import { eventsObj } from "../WelcomePage/WelcomePageEventsData";
+import { Button, ButtonGroup, Col, Container, Row } from "react-bootstrap";
 import type { EventsObj } from "../../../interfaces";
-import { Col, Container, Row } from "react-bootstrap";
 
 import "./EventDetail.css";
 import { BuyMeACoffe } from "../../../generic/BuyMeACoffe/BuyMeACoffe";
+
+const socialMediaGetIcons = (name: string) => {
+  switch (name) {
+    case "facebook":
+      return <Facebook />;
+    case "instagram":
+      return <Instagram />;
+    case "whatsapp":
+      return <Whatsapp />;
+    case "discord":
+      return <Discord />;
+    default:
+      return null;
+  }
+};
 
 export const EventDetail = () => {
   const { eventId } = useParams();
   const eventData = eventsObj[eventId as keyof EventsObj];
   const largeDesc = eventData.description.largeDesc;
+  const socialMediaInfo = eventData.description.socialMedia;
   return (
     <>
       <Container className="normalPageContainer">
@@ -26,7 +43,7 @@ export const EventDetail = () => {
           <Col xs={12} sm={6} src={eventData.imgSrc} as={"img"} />
         </Row>
         <Row>
-          <Col xs={9}>
+          <Col className="largeDesc" xs={12} sm={9}>
             {largeDesc ? (
               largeDesc.map((x, i) => {
                 return (
@@ -41,8 +58,35 @@ export const EventDetail = () => {
               </p>
             )}
           </Col>
-          <Col xs={3} className="otherInfoCol">
-            <BuyMeACoffe />
+          <Col xs={12} sm={3} className="otherInfoCol">
+            <Container className="otherInfoContainer">
+              <Row>
+                <Col xs={12}>
+                  <h5>{eventData.description.owner} social media</h5>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  <ButtonGroup>
+                    {socialMediaInfo?.map((x, i) => {
+                      return (
+                        <Button
+                          variant="outline-light"
+                          key={`socialMediaItem${i}`}
+                        >
+                          {socialMediaGetIcons(x.name)}
+                        </Button>
+                      );
+                    })}
+                  </ButtonGroup>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  <BuyMeACoffe />
+                </Col>
+              </Row>
+            </Container>
           </Col>
         </Row>
       </Container>
