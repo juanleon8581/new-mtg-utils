@@ -5,6 +5,8 @@ export interface EventDescription {
   text: string;
   location: string;
   owner: string;
+  ownerMapUrl?: string;
+  ownerWebPage?: string;
   ownerimg?: string;
   largeDesc?: string[];
   socialMedia?: SocialMedia[];

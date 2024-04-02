@@ -1,5 +1,11 @@
 import { useParams } from "react-router-dom";
-import { Whatsapp, Instagram, Facebook, Discord } from "react-bootstrap-icons";
+import {
+  Whatsapp,
+  Instagram,
+  Facebook,
+  Discord,
+  Youtube,
+} from "react-bootstrap-icons";
 import { eventsObj } from "../WelcomePage/WelcomePageEventsData";
 import { Button, ButtonGroup, Col, Container, Row } from "react-bootstrap";
 import type { EventsObj } from "../../../interfaces";
@@ -7,6 +13,7 @@ import type { EventsObj } from "../../../interfaces";
 import { BuyMeACoffe } from "../../../generic/BuyMeACoffe/BuyMeACoffe";
 import "./EventDetail.css";
 import "./EventDetail.mq.css";
+import { MapIframe } from "../../component";
 
 const socialMediaGetIcons = (name: string) => {
   switch (name) {
@@ -18,6 +25,8 @@ const socialMediaGetIcons = (name: string) => {
       return <Whatsapp />;
     case "discord":
       return <Discord />;
+    case "youtube":
+      return <Youtube />;
     default:
       return null;
   }
@@ -39,6 +48,9 @@ export const EventDetail = () => {
                   ? `${eventData.title} - ${eventData.description.owner}`
                   : null}
               </span>
+            </h1>
+            <h1>
+              <span>{eventData.description.date}</span>
             </h1>
           </Col>
           <Col xs={12} sm={6} src={eventData.imgSrc} as={"img"} />
@@ -63,11 +75,24 @@ export const EventDetail = () => {
             <Container className="otherInfoContainer">
               <Row>
                 <Col xs={12}>
-                  <img
-                    className="ownerImg"
-                    src={eventData.description.ownerimg || eventData.imgSrc}
-                    alt={eventData.description.owner}
-                  />
+                  {eventData.description.ownerWebPage ? (
+                    <a
+                      href={eventData.description.ownerWebPage || ""}
+                      target="_blank"
+                    >
+                      <img
+                        className="ownerImg"
+                        src={eventData.description.ownerimg || eventData.imgSrc}
+                        alt={eventData.description.owner}
+                      />
+                    </a>
+                  ) : (
+                    <img
+                      className="ownerImg"
+                      src={eventData.description.ownerimg || eventData.imgSrc}
+                      alt={eventData.description.owner}
+                    />
+                  )}
                   <h5>social media</h5>
                 </Col>
               </Row>
@@ -85,6 +110,13 @@ export const EventDetail = () => {
                       );
                     })}
                   </ButtonGroup>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  {eventData.description.ownerMapUrl && (
+                    <MapIframe src={eventData.description.ownerMapUrl} />
+                  )}
                 </Col>
               </Row>
               <Row>

@@ -12,7 +12,7 @@ describe("WelcomePage", () => {
       }
     );
     render(<RouterProvider router={router} />);
-    const text = screen.getByText("4º Liga Spelltable");
+    const text = screen.getByText("4º Liga cEDH Spelltable");
     expect(text).toBeDefined();
   });
 });

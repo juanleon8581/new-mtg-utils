@@ -1,6 +1,8 @@
 import MOLiga from "../../../assets/img/MOLiga.jpg";
 import cedhDraco from "../../../assets/img/cedh6abr.jpeg";
+import dracoLogo from "../../../assets/img/dracologo.jpg";
 import bGComarca from "../../../assets/img/bGComarca27m.jpeg";
+import laComarcaLogo from "../../../assets/img/lacomarcalogo.jpg";
 
 import type {
   EventCardData,
@@ -10,22 +12,62 @@ import type {
 import { routerStrings } from "../../../generic/globalStrings";
 
 const mOLigaDesc: EventDescription = {
-  date: "04-04-2024",
+  date: "04-15-2024",
   location: "Virtual - Spelltable",
   owner: "Mystic Ouphes",
   text: "Inicia en el formato competitivo sin moverte de tu hogar, liga de commander competitivo a nivel nacional.",
+  socialMedia: [
+    { name: "discord", link: "https://discord.gg/tafXsmD4" },
+    { name: "whatsapp", link: "https://wa.me/573053136951" },
+  ],
+  largeDesc: [
+    `
+  ¡Bienvenidos a la emocionante liga Virtual de Commander, organizada con el poder de SpellTable!`,
+    `Prepárate para sumergirte en un universo de estrategia, poder y magia mientras te enfrentas a otros comanderos de todo el pais. En este torneo, la flexibilidad y la amabilidad del formato Commander brillan como nunca antes. Con todas las cartas a tu disposición (ProxyFriendly) y la libertad de construir tu mazo alrededor de un comandante único, ¡las posibilidades son infinitas!`,
+    `Con SpellTable, la experiencia de juego es más accesible que nunca. Ya sea que te encuentres en la comodidad de tu hogar o explorando nuevos horizontes y destrozando fronteras, ¡la liga de Commander de Mystic Ouphes te espera!`,
+    `Conoce Spelltable: https://www.spelltable.com/`,
+  ],
 };
 
 const cedhDracoDesc: EventDescription = {
   date: "04-06-2024",
   owner: "Draco Hobby Center",
+  ownerimg: dracoLogo,
+  ownerWebPage: "https://dracostore.co/",
   location: "Draco Bogota",
   text: "Participa por grandes premios y mide tu nivel como jugador competitivo enfrentando a los mejores.",
+  socialMedia: [
+    {
+      name: "facebook",
+      link: "facebook.com/DracoHobbyCenter",
+    },
+    {
+      name: "instagram",
+      link: "instagram.com/dracohobbycenter",
+    },
+    {
+      name: "whatsapp",
+      link: "https://wa.me/573155681771",
+    },
+    {
+      name: "youtube",
+      link: "https://www.youtube.com/@DracoHobbyCenter",
+    },
+  ],
+  largeDesc: [
+    `¡Bienvenidos al Torneo mas grande de Commander en Colombia, el evento más competitivo del país! Evento organizado y respaldado por Draco Hobby Center, este torneo busca reunir a los mas hábiles y competitivos jugadores del formato y el pais entero.`,
+    `En este épico enfrentamiento, los jugadores desplegarán sus estrategiaspara quedarse con un pool de premios inigualable, que incluye desde cartas codiciadas como dual-lands hasta productos exclusivos y sellados, los participantes no solo competirán por la gloria, sino también por engordar su coleccion o billetera.`,
+    `Desde las tácticas más refinadas hasta la desconocida Thassa-Consultation, cada partida será un duelo de ingenio y estrategia donde solo los más capacitados podrán alcanzar la victoria. ¿Estás preparado para enfrentarte a los mejores jugadores del país y reclamar tu lugar en la cima?`,
+    `¡te esperamos!`,
+  ],
+  ownerMapUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.6096394696815!2d-74.06223592432377!3d4.663486041977633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b8d53b713df%3A0x199473b60eb1a013!2sDraco%20Hobby%20Center%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1712071298881!5m2!1ses!2sco",
 };
 
 const bGComarcaDesc: EventDescription = {
   date: "04-27-2024",
   owner: "La Comarca Hobbies & Foot",
+  ownerimg: laComarcaLogo,
   location: "La Comarca Medellin",
   text: "Desde las 4pm tendremos toda nuestra coleccion de juegos de mesa listos para que disfrutemos de ellos.",
   largeDesc: [
@@ -55,12 +97,14 @@ const bGComarcaDesc: EventDescription = {
       link: "https://wa.me/573053136951",
     },
   ],
+  ownerMapUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2215694563374!2d-75.60494602432077!3d6.234497426452932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429d0d87700e9%3A0x5eaa3b1be26e2411!2sLa%20Comarca%20Hobbies%20%26%20Food!5e0!3m2!1ses!2sco!4v1712070107071!5m2!1ses!2sco",
 };
 
 const mo_liga_event_data: EventCardData = {
   id: `mo_liga_event_data`,
   imgSrc: MOLiga,
-  title: "4º Liga Spelltable",
+  title: "4º Liga cEDH Spelltable",
   btnLabel: "Saber mas...",
   to: `${routerStrings.eventDetail}`,
   description: mOLigaDesc,
