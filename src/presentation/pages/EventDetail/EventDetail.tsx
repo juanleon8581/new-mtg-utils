@@ -102,6 +102,8 @@ export const EventDetail = () => {
                     {socialMediaInfo?.map((x, i) => {
                       return (
                         <Button
+                          href={x.link}
+                          target="_blank"
                           variant="outline-light"
                           key={`socialMediaItem${i}`}
                         >
