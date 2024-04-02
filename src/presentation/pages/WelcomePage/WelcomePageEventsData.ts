@@ -1,9 +1,3 @@
-import MOLiga from "../../../assets/img/MOLiga.jpg";
-import cedhDraco from "../../../assets/img/cedh6abr.jpeg";
-import dracoLogo from "../../../assets/img/dracologo.jpg";
-import bGComarca from "../../../assets/img/bGComarca27m.jpeg";
-import laComarcaLogo from "../../../assets/img/lacomarcalogo.jpg";
-
 import type {
   EventCardData,
   EventDescription,
@@ -32,18 +26,19 @@ const mOLigaDesc: EventDescription = {
 const cedhDracoDesc: EventDescription = {
   date: "04-06-2024",
   owner: "Draco Hobby Center",
-  ownerimg: dracoLogo,
+  ownerimg:
+    "https://firebasestorage.googleapis.com/v0/b/mtg-events-file-storage.appspot.com/o/dracologo.jpg?alt=media&token=0a41da7c-42cd-4548-9dbb-c333878bf514",
   ownerWebPage: "https://dracostore.co/",
   location: "Draco Bogota",
   text: "Participa por grandes premios y mide tu nivel como jugador competitivo enfrentando a los mejores.",
   socialMedia: [
     {
       name: "facebook",
-      link: "facebook.com/DracoHobbyCenter",
+      link: "https://facebook.com/DracoHobbyCenter",
     },
     {
       name: "instagram",
-      link: "instagram.com/dracohobbycenter",
+      link: "https://instagram.com/dracohobbycenter",
     },
     {
       name: "whatsapp",
@@ -67,7 +62,8 @@ const cedhDracoDesc: EventDescription = {
 const bGComarcaDesc: EventDescription = {
   date: "04-27-2024",
   owner: "La Comarca Hobbies & Foot",
-  ownerimg: laComarcaLogo,
+  ownerimg:
+    "https://firebasestorage.googleapis.com/v0/b/mtg-events-file-storage.appspot.com/o/lacomarcalogo.jpg?alt=media&token=15026bb3-9adb-4c93-b06d-2750894c1c68",
   location: "La Comarca Medellin",
   text: "Desde las 4pm tendremos toda nuestra coleccion de juegos de mesa listos para que disfrutemos de ellos.",
   largeDesc: [
@@ -103,7 +99,8 @@ const bGComarcaDesc: EventDescription = {
 
 const mo_liga_event_data: EventCardData = {
   id: `mo_liga_event_data`,
-  imgSrc: MOLiga,
+  imgSrc:
+    "https://firebasestorage.googleapis.com/v0/b/mtg-events-file-storage.appspot.com/o/MOLiga.jpg?alt=media&token=9054fc75-5835-4b6c-bc1a-486907d95ea6",
   title: "4º Liga cEDH Spelltable",
   btnLabel: "Saber mas...",
   to: `${routerStrings.eventDetail}`,
@@ -113,7 +110,8 @@ const mo_liga_event_data: EventCardData = {
 
 const cedh_draco_event_data: EventCardData = {
   id: "cedh_draco_event_data",
-  imgSrc: cedhDraco,
+  imgSrc:
+    "https://firebasestorage.googleapis.com/v0/b/mtg-events-file-storage.appspot.com/o/cedh6abr.jpeg?alt=media&token=ba150068-78b7-4680-b1fa-9f6d59205a09",
   title: "Torneo cEDH",
   btnLabel: "Saber mas...",
   to: `${routerStrings.eventDetail}`,
@@ -122,7 +120,8 @@ const cedh_draco_event_data: EventCardData = {
 
 const bg_comarca_event_data: EventCardData = {
   id: "bg_comarca_event_data",
-  imgSrc: bGComarca,
+  imgSrc:
+    "https://firebasestorage.googleapis.com/v0/b/mtg-events-file-storage.appspot.com/o/bGComarca27m.jpeg?alt=media&token=af45f16e-7c26-4c0e-aea5-358be92a653e",
   title: "Parcehe de juegos de mesa",
   btnLabel: "Saber mas...",
   to: `${routerStrings.eventDetail}`,
