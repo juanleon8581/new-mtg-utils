@@ -5,5 +5,12 @@ interface MapIframeProps {
 }
 
 export const MapIframe = ({ src }: MapIframeProps) => {
-  return <iframe className="mapIframe" src={src} loading="lazy"></iframe>;
+  return (
+    <iframe
+      role={"mapIframe"}
+      className="mapIframe"
+      src={src}
+      loading="lazy"
+    ></iframe>
+  );
 };

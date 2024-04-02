@@ -56,7 +56,7 @@ export const EventDetail = () => {
           <Col xs={12} sm={6} src={eventData.imgSrc} as={"img"} />
         </Row>
         <Row>
-          <Col className="largeDesc" xs={12} sm={9}>
+          <Col role={"largeDesc"} className="largeDesc" xs={12} sm={9}>
             {largeDesc ? (
               largeDesc.map((x, i) => {
                 return (
