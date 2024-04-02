@@ -3,7 +3,7 @@ import { FormInput } from ".";
 
 export interface FormItemProps {
   labelText: string;
-  type?: string;
+  fieldValidations: RegisterOptions;
   name:
     | "hours"
     | "minutes"
@@ -12,7 +12,7 @@ export interface FormItemProps {
     | "email"
     | "subject"
     | "message";
+  type?: string;
   errors?: FieldErrors<FormInput>;
-  fieldValidations: RegisterOptions;
   register?: UseFormRegister<FormInput>;
 }

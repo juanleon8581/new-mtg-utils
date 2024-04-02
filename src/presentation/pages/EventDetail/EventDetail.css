@@ -21,5 +21,11 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-align: justify;
-  padding-right: 20rem;
+}
+
+.otherInfoCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

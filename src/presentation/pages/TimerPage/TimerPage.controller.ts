@@ -1,10 +1,10 @@
 import type {
-  TimerInput,
+  FormInput,
   TimerInputsOptions,
-  TimerFormItemProps,
+  FormItemProps,
 } from "../../../interfaces";
 
-export const defaultInitialTimerFormValues: TimerInput = {
+export const defaultInitialTimerFormValues: FormInput = {
   hours: "1",
   minutes: "15",
   seconds: "06",
@@ -16,7 +16,7 @@ export const fieldValidations: TimerInputsOptions = {
   seconds: { required: true, min: 0, maxLength: 4 },
 };
 
-export const timerFormItemsData: TimerFormItemProps[] = [
+export const timerFormItemsData: FormItemProps[] = [
   {
     labelText: "Hours",
     name: "hours",

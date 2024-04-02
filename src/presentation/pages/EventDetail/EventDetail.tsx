@@ -4,6 +4,7 @@ import type { EventsObj } from "../../../interfaces";
 import { Col, Container, Row } from "react-bootstrap";
 
 import "./EventDetail.css";
+import { BuyMeACoffe } from "../../../generic/BuyMeACoffe/BuyMeACoffe";
 
 export const EventDetail = () => {
   const { eventId } = useParams();
@@ -25,15 +26,23 @@ export const EventDetail = () => {
           <Col xs={12} sm={6} src={eventData.imgSrc} as={"img"} />
         </Row>
         <Row>
-          <Col xs={12}>
-            {largeDesc &&
+          <Col xs={9}>
+            {largeDesc ? (
               largeDesc.map((x, i) => {
                 return (
                   <p className="descriptionContainer" key={`desc${i}`}>
                     {x}
                   </p>
                 );
-              })}
+              })
+            ) : (
+              <p className="descriptionContainer">
+                {eventData.description.text}
+              </p>
+            )}
+          </Col>
+          <Col xs={3} className="otherInfoCol">
+            <BuyMeACoffe />
           </Col>
         </Row>
       </Container>
