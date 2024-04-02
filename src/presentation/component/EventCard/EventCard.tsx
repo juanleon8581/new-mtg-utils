@@ -4,6 +4,7 @@ import { EventCardProps } from "../../../interfaces";
 import "./EventCard.css";
 
 export const EventCard = ({
+  id,
   imgSrc,
   title,
   description,
@@ -22,11 +23,9 @@ export const EventCard = ({
           </ListGroup.Item>
         </ListGroup>
         <Card.Text>{description.text}</Card.Text>
-        <Button variant="outline-light">
-          <Link className="linkButton" to={to}>
-            {btnLabel}
-          </Link>
-        </Button>
+        <Link className="linkButton" to={`${to}/${id}`}>
+          <Button variant="outline-light">{btnLabel}</Button>
+        </Link>
       </Card.Body>
     </Card>
   );

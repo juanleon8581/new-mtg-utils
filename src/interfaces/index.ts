@@ -6,3 +6,5 @@ export type { TimerInputsOptions } from "./i_TimerInputsOptions";
 export type { EventDescription } from "./i_EventDescription";
 export type { EventCardProps } from "./i_EventCardProps";
 export type { EventCardData } from "./i_EventCardData";
+export type { EventsId } from "./i_EventsId";
+export type { EventsObj } from "./i_EventsObj";

@@ -14,14 +14,7 @@ export const WelcomePage = () => {
             return;
           }
           return (
-            <Col
-              className="cardCol"
-              key={`${e.title}${e.description.location}`}
-              xs={12}
-              sm={6}
-              lg={4}
-              xl={3}
-            >
+            <Col className="cardCol" key={e.id} xs={12} sm={6} lg={4} xl={3}>
               <EventCard {...e} />
             </Col>
           );

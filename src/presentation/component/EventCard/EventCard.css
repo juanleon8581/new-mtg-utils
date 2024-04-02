@@ -21,14 +21,7 @@
   border-radius: var(--bs-border-radius);
 }
 
-.eventCard > .card-body > button > a {
+.eventCard > .card-body > a > button {
   font-family: arcadeclassic;
-}
-
-.linkButton {
-  text-decoration: none;
-  color: inherit;
-  background-color: inherit;
   letter-spacing: 1px;
-  font-family: arcadeclassic;
 }
