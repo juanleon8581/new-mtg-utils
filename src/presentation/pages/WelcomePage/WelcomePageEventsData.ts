@@ -41,6 +41,20 @@ const bGComarcaDesc: EventDescription = {
     `Vanity o H2OH: $21.000`,
     `Cerveza Señor Bolsón: $30.000`,
   ],
+  socialMedia: [
+    {
+      name: "facebook",
+      link: "https://www.facebook.com/lacomarca.hobbies.1",
+    },
+    {
+      name: "instagram",
+      link: "https://www.instagram.com/lacomarcahobbies/",
+    },
+    {
+      name: "whatsapp",
+      link: "https://wa.me/573053136951",
+    },
+  ],
 };
 
 const mo_liga_event_data: EventCardData = {
