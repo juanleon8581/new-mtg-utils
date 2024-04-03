@@ -14,7 +14,7 @@ const minutesLabelIsdefined = () => {
 
 const minutesInputHaveInitialValue = () => {
   const { minutes } = defaultInitialTimerFormValues;
-  isDefinedByValue(minutes);
+  isDefinedByValue(minutes!);
 };
 
 const minutesValidateErrorField = async () => {

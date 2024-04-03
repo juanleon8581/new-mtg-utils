@@ -16,7 +16,7 @@ const BuyButton = () => {
   );
 };
 
-export const BuyMeACoffe = ({ onlyButton = false }) => {
+export const BuyMeACoffe = ({ onlyButton = false }: BuyMeACoffeProps) => {
   return (
     <>
       {onlyButton ? (

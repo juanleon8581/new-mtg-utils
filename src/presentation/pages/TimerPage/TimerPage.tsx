@@ -24,7 +24,11 @@ export const TimerPage = () => {
     value: 0,
   });
 
-  const onSubmit: SubmitHandler<FormInput> = ({ hours, minutes, seconds }) => {
+  const onSubmit: SubmitHandler<FormInput> = ({
+    hours = "0",
+    minutes = "0",
+    seconds = "0",
+  }) => {
     setTimerData({
       isSet: true,
       value: toMilliseconds(hours, minutes, seconds),

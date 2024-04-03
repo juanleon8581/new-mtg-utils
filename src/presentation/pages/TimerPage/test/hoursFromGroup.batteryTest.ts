@@ -14,7 +14,7 @@ const hoursLabelIsdefined = () => {
 
 const hoursInputHaveInitialValue = () => {
   const { hours } = defaultInitialTimerFormValues;
-  isDefinedByValue(hours);
+  isDefinedByValue(hours!);
 };
 
 const hoursValidateErrorField = async () => {

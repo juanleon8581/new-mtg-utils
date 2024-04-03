@@ -14,7 +14,7 @@ const secondsLabelIsdefined = () => {
 
 const secondsInputHaveInitialValue = () => {
   const { seconds } = defaultInitialTimerFormValues;
-  isDefinedByValue(seconds);
+  isDefinedByValue(seconds!);
 };
 
 const secondsValidateErrorField = async () => {
