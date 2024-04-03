@@ -122,7 +122,7 @@ const bg_comarca_event_data: EventCardData = {
   id: "bg_comarca_event_data",
   imgSrc:
     "https://firebasestorage.googleapis.com/v0/b/mtg-events-file-storage.appspot.com/o/bGComarca27m.jpeg?alt=media&token=af45f16e-7c26-4c0e-aea5-358be92a653e",
-  title: "Parcehe de juegos de mesa",
+  title: "Parche de juegos de mesa",
   btnLabel: "Saber mas...",
   to: `${routerStrings.eventDetail}`,
   description: bGComarcaDesc,

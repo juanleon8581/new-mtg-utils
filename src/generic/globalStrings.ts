@@ -1,6 +1,6 @@
 export const routerStrings = {
   root: "/",
-  timer: "/timer",
-  contact: "/contact",
-  eventDetail: "/eventdetail",
+  timer: "timer",
+  contact: "contact",
+  eventDetail: "eventdetail",
 };

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { ScrollRestoration, useParams } from "react-router-dom";
 import {
   Whatsapp,
   Instagram,
@@ -130,6 +130,7 @@ export const EventDetail = () => {
           </Col>
         </Row>
       </Container>
+      <ScrollRestoration />
     </>
   );
 };
