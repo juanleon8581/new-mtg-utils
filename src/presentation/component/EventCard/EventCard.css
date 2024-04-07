@@ -4,6 +4,19 @@
   border-color: var(--card-border-color);
 }
 
+.cardImgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  /* background-color: rgb(165, 165, 165, 0.3); */
+}
+
+.cardImgContainer h5 {
+  color: var(--general-font-color);
+}
+
 .card-body .list-group-item,
 .card-body * {
   color: var(--general-font-color);
