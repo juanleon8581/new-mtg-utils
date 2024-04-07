@@ -2,6 +2,7 @@ import { Card, Button, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { EventCardProps } from "../../../interfaces";
 import "./EventCard.css";
+import { useState } from "react";
 
 export const EventCard = ({
   id,
@@ -11,9 +12,20 @@ export const EventCard = ({
   btnLabel,
   to,
 }: EventCardProps) => {
+  const [imgloaded, setImgLoaded] = useState(false);
   return (
     <Card className="eventCard">
-      <Card.Img variant="top" src={imgSrc} />
+      <div className="cardImgContainer">
+        <Card.Img
+          variant="top"
+          src={imgSrc}
+          alt={title}
+          onLoad={() => {
+            setImgLoaded(true);
+          }}
+        />
+        {!imgloaded && <h5>Loading...</h5>}
+      </div>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <ListGroup className="list-group-flush">
