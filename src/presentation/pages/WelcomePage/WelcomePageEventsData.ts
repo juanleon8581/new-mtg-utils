@@ -6,7 +6,7 @@ import type {
 import { routerStrings } from "../../../generic/globalStrings";
 
 const mOLigaDesc: EventDescription = {
-  date: "04-15-2024",
+  date: "04-15-2029",
   location: "Virtual - Spelltable",
   owner: "Mystic Ouphes",
   text: "Inicia en el formato competitivo sin moverte de tu hogar, liga de commander competitivo a nivel nacional.",
@@ -24,7 +24,7 @@ const mOLigaDesc: EventDescription = {
 };
 
 const cedhDracoDesc: EventDescription = {
-  date: "04-06-2024",
+  date: "04-06-2029",
   owner: "Draco Hobby Center",
   ownerimg:
     "https://firebasestorage.googleapis.com/v0/b/mtg-events-file-storage.appspot.com/o/dracologo.jpg?alt=media&token=0a41da7c-42cd-4548-9dbb-c333878bf514",
@@ -60,7 +60,7 @@ const cedhDracoDesc: EventDescription = {
 };
 
 const bGComarcaDesc: EventDescription = {
-  date: "04-27-2024",
+  date: "04-27-2029",
   owner: "La Comarca Hobbies & Foot",
   ownerimg:
     "https://firebasestorage.googleapis.com/v0/b/mtg-events-file-storage.appspot.com/o/lacomarcalogo.jpg?alt=media&token=15026bb3-9adb-4c93-b06d-2750894c1c68",
@@ -132,6 +132,8 @@ export const eventsStack: EventCardData[] = [
   mo_liga_event_data,
   cedh_draco_event_data,
   bg_comarca_event_data,
+  cedh_draco_event_data,
+  mo_liga_event_data,
 ];
 
 export const eventsObj: EventsObj = {
